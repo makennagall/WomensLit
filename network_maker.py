@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 from pyvis.network import Network 
-net = Network()
+from IPython.core.display import display, HTML
+
 
 import pandas as pd
 
-
+net = Network()
 #create library of word connections:
 reeves_text = open("ReevesTale.txt")
 cleanedReeve = ''
@@ -26,8 +27,10 @@ for index, word in enumerate(clean_r_list):
             wordDict[word] = [clean_r_list[index + 1]]
 print(wordDict)
 for key in wordDict:
+    count = len(wordDict[key])
     net.add_node(key, label = key)
 for key in wordDict:
     for word in wordDict[key]:
-        net.add_edge(key, word)    
-net.show('mygraph.html')
+        net.add_edge(key, word) 
+net.show('networkVisual.html')
+display(HTML('networkVisual.html'))
