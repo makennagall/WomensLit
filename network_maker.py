@@ -9,13 +9,19 @@ net = Network()
 #create library of word connections:
 reeves_text = open("ReevesTale.txt")
 cleanedReeve = ''
+ignore_list = ['a', 'the', 'and', 'i', 'of', 'to', 'in', 'was', 'is', 'by', 'is', 'that', 
+               'for', 'but', 'no', 'be', 'there', 'on', 'at', 'my', 'it', 'will', 'with',
+               'or', 'also', 'thou', 'you', 'we', 'up', 'can', 'which', 'yet', 'do', 'this', 'as',
+               'not', 'shall', 'had', 'so', 'now', 'when', 'if', 'am', 'thee']
+cleanedReeve = ''
 for line in reeves_text:
     line = line.lower()
     if line != "\n":
         for word in line.split(' '):
             word = ''.join(x for x in word if x.isalpha())
             if word != '':
-                cleanedReeve = cleanedReeve + ' '+ word
+                if word not in ignore_list:
+                    cleanedReeve = cleanedReeve + ' '+ word
 print(cleanedReeve)
 wordDict = {}
 clean_r_list = cleanedReeve.split(' ')
