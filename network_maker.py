@@ -38,5 +38,5 @@ for key in wordDict:
 for key in wordDict:
     for word in wordDict[key]:
         net.add_edge(key, word) 
-net.show('networkVisual.html')
-display(HTML('networkVisual.html'))
+net.show('network_visual.html')
+display(HTML('network_visual.html'))
