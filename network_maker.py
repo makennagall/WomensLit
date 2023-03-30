@@ -7,7 +7,7 @@ import pandas as pd
 
 net = Network()
 #create library of word connections:
-reeves_text = open("ReevesTale.txt")
+reeves_text = open("reeves_tale.txt")
 cleanedReeve = ''
 ignore_list = ['a', 'the', 'and', 'i', 'of', 'to', 'in', 'was', 'is', 'by', 'is', 'that', 
                'for', 'but', 'no', 'be', 'there', 'on', 'at', 'my', 'it', 'will', 'with',
