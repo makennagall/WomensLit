@@ -26,7 +26,3 @@ for word in cleanedReeve.split(' '):
 sorted_dict = sorted(frequency_dict.items(), key=lambda x:x[1])
 for item in sorted_dict:
     print(item)
-
-subject_list = ['aleyn', 'he', 'his', 'they', 'miller', 'john', 'she', 'their',
-                'her', 'horse', 'them', 'clerks', 'wife', 'daughter', 'clerk',
-                'god', 'symkyn', 'mill', 'man', 'tale', 'gods', 'men', 'family']
