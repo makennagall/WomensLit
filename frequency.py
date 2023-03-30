@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
-reeves_text = open("ReevesTale.txt")
-
+reeves_text = open("reeves_tale.txt")
+output_file = open("frequency_output.txt", 'w')
 ignore_list = ['a', 'the', 'and', 'i', 'of', 'to', 'in', 'was', 'is', 'by', 'is', 'that', 
                'for', 'but', 'no', 'be', 'there', 'on', 'at', 'my', 'it', 'will', 'with',
                'or', 'also', 'thou', 'you', 'we', 'up', 'can', 'which', 'yet', 'do', 'this', 'as',
@@ -26,3 +26,4 @@ for word in cleanedReeve.split(' '):
 sorted_dict = sorted(frequency_dict.items(), key=lambda x:x[1])
 for item in sorted_dict:
     print(item)
+    output_file.write(item[0] + ": " + str(item[1]) + "\n")
