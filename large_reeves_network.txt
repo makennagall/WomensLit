@@ -1,0 +1,556 @@
+NOUN TO ADJECTIVE AND VERB CONNECTIONS
+business
+	foolish: 1
+absolon
+	clever: 1
+nicholas
+	clever: 1
+opinions
+	different: 1
+part
+	laughed: 1
+anger
+	little: 1
+heart
+	began: 1
+grouch
+	criticized: 1
+prosper
+	repay: 1
+fare
+	ripe: 2
+fruit
+	continually: 1
+rubbish
+	trick: 1
+power
+	gone: 2
+folly
+	continually: 1
+ashes
+	old: 1
+fire
+	have: 1
+coals
+	have: 1
+sparks
+	little: 1
+limbs
+	old: 1
+tongue
+	foolish: 1
+wretchedness
+	old: 1
+host
+	make: 1
+king
+	amounts: 1
+wit
+	speak: 1
+writ
+	holy: 1
+devil
+	made: 1
+cobbler
+	made: 1
+physician
+	say: 1
+displeased
+	answer: 1
+permissable
+	repel: 1
+terms
+	speak: 1
+neck
+	spoke: 1
+peacock
+	play: 1
+fish
+	mend: 1
+nets
+	play: 1
+game
+	shoot: 1
+belt
+	carried: 1
+cutlass
+	sharp: 1
+sword
+	elegant: 1
+peril
+	dared: 1
+face
+	pug: 1
+nose
+	pug: 2
+person
+	lay: 1
+sly
+	steal: 1
+father
+	steal: 1
+holidays
+	would: 1
+disdain
+	scorn: 1
+boy
+	little: 1
+breasts
+	high: 1
+hair
+	lie: 1
+college
+	complained: 1
+scholars
+	poor: 1
+amusement
+	implore: 2
+sack
+	spoke: 1
+sides
+	needed: 1
+flour
+	give: 1
+bran
+	greatest: 1
+wolf
+	spoke: 1
+mare
+	saw: 1
+reeve
+	preach: 1, pray: 1
+little
+	white: 1, saw: 1
+age
+	play: 1, old: 1
+same
+	dared: 1, went: 1
+men
+	old: 1, wisest: 1
+nail
+	white: 1, have: 1
+anything
+	old: 1, talk: 1
+truth
+	young: 1, have: 1
+sermon
+	lordly: 1, making: 1
+force
+	drunk: 1, leave: 1
+bully
+	quarrelsome: 1, dared: 1
+meal
+	falls: 1, gone: 2
+lady
+	brave: 1, went: 1
+household
+	high: 1, raised: 1
+churchs
+	holy: 2, would: 1
+people
+	thought: 1, say: 1
+hall
+	ground: 1, headstrong: 1
+hopper
+	stand: 1, wags: 1
+time
+	done: 2, begin: 1, have: 1
+straw
+	dry: 1, old: 1, see: 1
+years
+	old: 1, foolish: 1, have: 1
+day
+	happened: 1, scorn: 1, have: 1
+fool
+	ingenious: 1, trickery: 1, lie: 1
+dagger
+	elegant: 1, carried: 1, jealous: 1
+skull
+	quarrelsome: 1, bald: 1, die: 1
+hand
+	have: 1, carried: 1, thought: 1
+symkyn
+	fostered: 1, would: 1, done: 2
+manciple
+	lay: 1, continually: 1, expect: 1
+tale
+	saw: 1, old: 1, blearing: 1, waste: 2
+man
+	aggrieved: 1, trick: 1, take: 1, perilous: 1
+head
+	white: 2, reveals: 1, grind: 1, see: 1
+mill
+	see: 1, lays: 1, thick: 1, made: 1
+town
+	fair: 1, determined: 1, called: 1, made: 1
+wench
+	thick: 1, made: 1, fast: 1, lay: 1
+folk
+	foolish: 1, laughed: 1, different: 1, old: 1, dangerous: 1
+may
+	feeble: 1, break: 1, poor: 1, make: 1, say: 1
+god
+	knows: 2, began: 1, gone: 1, thought: 1, high: 1, have: 1
+cradle
+	lay: 1, drunk: 1, give: 1, gone: 4, would: 1, have: 1
+wife
+	fair: 1, preserve: 1, welcome: 1, fast: 1, went: 1, lays: 1, foolish: 1
+grain
+	stole: 1, ground: 2, trickery: 1, fast: 1, carry: 1, saw: 1, gone: 2, have: 1
+	
+clerks
+	say: 1, greatest: 1, wisest: 1, fast: 3, have: 1, trick: 1, stand: 1, would: 1, 
+	began: 1, saw: 1, lie: 1
+miller
+	drunk: 1, told: 1, stole: 1, young: 1, thought: 2, steal: 1, done: 3, gone: 1, 
+	saw: 1, make: 1, have: 1, perilous: 1, lay: 1, bald: 1, expect: 1
+	
+NOUN CONNECTIONS
+deptford
+	time: 2
+bridge
+	brook: 2
+business
+	folk: 1, absolon: 1
+absolon
+	business: 1, nicholas: 1
+nicholas
+	absolon: 1, folk: 1
+opinions
+	folk: 1, part: 1
+part
+	opinions: 1, tale: 1
+carpenters
+	reeve: 1, craft: 1
+craft
+	carpenters: 1, little: 1
+grouch
+	heart: 1, little: 1
+medlar
+	fruit: 1, same: 1
+fear
+	men: 1, fare: 1
+dance
+	fare: 1, world: 1
+world
+	dance: 1, pipe: 1
+pipe
+	world: 1, sticks: 1
+sticks
+	pipe: 1, nail: 1
+nail
+	sticks: 1, head: 1
+leek
+	head: 1, power: 1
+power
+	leek: 1, desires: 1
+folly
+	desires: 1, anything: 1
+ashes
+	anything: 1, fire: 1
+coals
+	fire: 1, boasting: 1
+boasting
+	coals: 1, lying: 1
+lying
+	boasting: 1, anger: 1
+greed
+	anger: 1, little: 1
+sparks
+	little: 1, age: 1
+limbs
+	age: 1, may: 1
+tongue
+	years: 1, may: 1
+chime
+	may: 1, wretchedness: 1
+wretchedness
+	chime: 1, folk: 1
+dotage
+	folk: 1, host: 1
+sermon
+	host: 1, king: 1
+king
+	sermon: 1, wit: 1
+wit
+	king: 1, day: 1
+writ
+	holy: 1, devil: 1
+devil
+	writ: 1, reeve: 1
+cobbler
+	reeve: 1, shipman: 1
+shipman
+	cobbler: 1, physician: 1
+physician
+	shipman: 1, tale: 1
+sires
+	tale: 1, reeve: 1
+displeased
+	reeve: 1, fool: 1
+permissable
+	fool: 1, force: 1
+terms
+	miller: 1, god: 1
+timber
+	piece: 1, tale: 1
+trumpington
+	tale: 1, brook: 1
+dwelling
+	miller: 1, day: 1
+peacock
+	day: 1, bagpipe: 1
+bagpipe
+	peacock: 1, fish: 1
+fish
+	bagpipe: 1, nets: 1
+nets
+	fish: 1, game: 1
+game
+	nets: 1, belt: 1
+belt
+	game: 1, cutlass: 1
+blade
+	cutlass: 1, sword: 1
+pouch
+	dagger: 1, man: 1
+peril
+	man: 1, hose: 1
+face
+	hose: 1, nose: 1
+ape
+	nose: 1, skull: 1
+bully
+	skull: 1, person: 1
+person
+	bully: 1, hand: 1
+sly
+	meal: 1, haughty: 1
+pan
+	father: 1, brass: 1
+brass
+	pan: 1, symkyn: 1
+holidays
+	wife: 1, tip: 1
+tip
+	holidays: 1, hood: 1
+hood
+	tip: 1, head: 1
+gown
+	head: 1, symkyn: 1
+water
+	haughty: 1, ditch: 1
+disdain
+	ditch: 1, lady: 1
+boy
+	little: 1, wench: 1
+glass
+	eyes: 1, buttocks: 1
+buttocks
+	glass: 1, breasts: 1
+breasts
+	buttocks: 1, hair: 1
+hair
+	breasts: 1, parson: 1
+property
+	town: 1, household: 1
+household
+	property: 1, ancestry: 1
+ancestry
+	household: 1, holy: 1
+churchs
+	holy: 3, goods: 1
+goods
+	churchs: 1, holy: 1
+monopoly
+	holy: 1, milling: 1
+milling
+	monopoly: 1, miller: 1
+land
+	miller: 1, college: 1
+soler
+	people: 1, hall: 1
+malady
+	manciple: 1, people: 1
+fuss
+	college: 1, miller: 1
+scholars
+	miller: 1, hall: 1
+mirth
+	hall: 1, amusement: 1
+amusement
+	mirth: 1, little: 1
+gear
+	town: 1, sack: 1
+buckler
+	sword: 1, sides: 1
+sides
+	buckler: 1, guide: 1
+guide
+	sides: 1, mill: 1
+trough
+	meal: 1, may: 1
+bran
+	flour: 1, clerks: 1
+wolf
+	men: 1, mare: 1
+mare
+	wolf: 1, time: 1
+prosper
+	may: 2, tale: 1, mill: 1
+neck
+	god: 1, may: 1, miller: 2
+piece
+	may: 1, straw: 2, timber: 1
+brook
+	trumpington: 1, bridge: 2, mill: 1
+parson
+	kin: 1, town: 2, hair: 1
+nunnery
+	symkyn: 2, lady: 1, years: 1
+anger
+	little: 1, heart: 1, lying: 1, greed: 1
+fare
+	heart: 1, fruit: 1, fear: 1, dance: 1
+fruit
+	fare: 1, medlar: 1, same: 1, rubbish: 1
+rubbish
+	fruit: 1, straw: 1, sack: 1, day: 1
+desires
+	power: 1, folly: 1, truth: 1, years: 1
+anything
+	folly: 1, ashes: 1, same: 1, lady: 1
+host
+	dotage: 1, sermon: 1, man: 1, hand: 1
+cutlass
+	belt: 1, blade: 1, symkyn: 1, dagger: 1
+dagger
+	sword: 1, pouch: 1, cutlass: 1, folk: 1
+hose
+	peril: 1, face: 1, symkyn: 1, same: 1
+skull
+	ape: 1, bully: 1, miller: 1, clerks: 1
+thief
+	hand: 1, truth: 1, grain: 1, college: 1
+haughty
+	sly: 1, symkyn: 1, folk: 1, water: 1
+kin
+	wife: 1, parson: 1, grain: 1, hopper: 1
+father
+	town: 1, pan: 1, meal: 1, god: 1
+lady
+	anything: 1, symkyn: 1, disdain: 1, nunnery: 1
+ditch
+	water: 1, disdain: 1, clerks: 1, day: 1
+eyes
+	nose: 1, glass: 1, man: 1, fool: 1
+college
+	land: 1, people: 1, thief: 1, fuss: 1
+hall
+	soler: 1, day: 1, scholars: 1, mirth: 1
+manciple
+	time: 1, malady: 1, clerks: 1, head: 1
+hopper
+	god: 1, grain: 1, kin: 1, head: 1
+straw
+	time: 1, head: 1, rubbish: 1, men: 1, piece: 2
+fire
+	ashes: 1, coals: 1, miller: 1, god: 1, may: 2
+force
+	permissable: 1, force: 2, miller: 1, grain: 1, town: 1
+flour
+	fool: 1, bran: 1, miller: 2, wife: 1, mill: 1
+reeve
+	man: 1, carpenters: 1, devil: 1, cobbler: 1, sires: 1, displeased: 1
+years
+	head: 1, heart: 1, desires: 1, tongue: 1, nunnery: 1, age: 1
+same
+	medlar: 1, fruit: 1, hose: 1, anything: 1, town: 1, miller: 1
+truth
+	may: 1, desires: 1, mill: 1, miller: 1, thief: 1, grain: 1
+sword
+	blade: 1, dagger: 1, sack: 1, buckler: 1, hand: 1, god: 1
+wench
+	boy: 1, nose: 1, wife: 1, may: 3, man: 2, wench: 2
+people
+	college: 1, soler: 1, malady: 1, miller: 1, fool: 1, cradle: 1
+sack
+	gear: 1, sword: 1, mill: 1, wife: 1, fool: 1, rubbish: 1
+folk
+	business: 1, nicholas: 1, opinions: 1, wretchedness: 1, dotage: 1, dagger: 1, haughty: 1
+heart
+	anger: 1, grouch: 1, years: 1, fare: 1, god: 2, holy: 1, head: 1
+age
+	tale: 1, time: 1, sparks: 1, limbs: 1, years: 1, age: 2, cradle: 1
+town
+	parson: 2, father: 1, property: 1, force: 1, gear: 1, miller: 1, same: 1
+men
+	straw: 1, fear: 1, clerks: 1, wolf: 1, grain: 1, miller: 1, hand: 1, may: 1
+	
+nose
+	face: 1, ape: 1, wench: 1, eyes: 1, head: 1, wife: 1, miller: 2, nose: 2
+	
+holy
+	day: 1, writ: 1, ancestry: 1, churchs: 3, goods: 1, holy: 2, monopoly: 1, little: 1, 
+	heart: 1
+meal
+	grain: 4, sly: 1, miller: 1, head: 1, trough: 1, man: 2, mill: 2, father: 1, 
+	clerks: 1
+cradle
+	age: 1, little: 1, wife: 3, miller: 2, people: 1, hand: 4, clerks: 2, god: 1, 
+	head: 1
+time
+	age: 1, straw: 1, tale: 2, deptford: 2, day: 3, manciple: 1, mare: 1, clerks: 3, 
+	grain: 1, wife: 1
+fool
+	displeased: 1, permissable: 1, god: 2, clerks: 2, eyes: 1, flour: 1, may: 1, sack: 1, 
+	day: 1, people: 1
+hand
+	person: 1, thief: 1, wife: 2, sword: 1, mill: 1, miller: 1, host: 1, men: 1, 
+	cradle: 4, god: 1
+tale
+	part: 1, man: 1, prosper: 1, age: 1, physician: 1, time: 2, sires: 1, timber: 1, 
+	tale: 4, trumpington: 1, miller: 1
+man
+	tale: 1, reeve: 1, pouch: 1, peril: 1, miller: 2, eyes: 1, meal: 2, may: 1, 
+	host: 1, wench: 2, grain: 1
+day
+	wit: 1, holy: 1, dwelling: 1, peacock: 1, hall: 1, time: 3, ditch: 1, grain: 1, 
+	miller: 1, rubbish: 1, fool: 1, may: 1
+mill
+	brook: 1, truth: 1, little: 1, grain: 1, guide: 1, sack: 1, clerks: 2, miller: 3, 
+	hand: 1, prosper: 1, meal: 2, flour: 1
+symkyn
+	haughty: 1, wife: 3, brass: 1, nunnery: 2, gown: 1, hose: 1, lady: 1, cutlass: 1, 
+	god: 2, grain: 1, head: 1, clerks: 1
+god
+	terms: 1, neck: 1, symkyn: 2, fool: 2, hopper: 1, sword: 1, heart: 2, fire: 1, 
+	miller: 3, father: 1, cradle: 1, hand: 1, head: 1
+little
+	craft: 1, anger: 1, grouch: 1, may: 1, greed: 1, sparks: 1, cradle: 1, boy: 1, 
+	amusement: 1, mill: 1, wife: 1, holy: 1, clerks: 1, miller: 1
+wife
+	symkyn: 3, kin: 1, holidays: 1, sack: 1, grain: 1, hand: 2, flour: 1, clerks: 1, 
+	nose: 1, cradle: 3, miller: 6, wench: 1, time: 1, little: 1
+head
+	straw: 1, years: 1, nail: 1, leek: 1, hood: 1, gown: 1, manciple: 1, grain: 1, 
+	hopper: 1, meal: 1, miller: 1, nose: 1, god: 1, cradle: 1, heart: 1, 
+	symkyn: 1
+grain
+	truth: 1, meal: 4, thief: 1, mill: 1, miller: 2, force: 1, head: 1, symkyn: 1, 
+	hopper: 1, kin: 1, clerks: 1, wife: 1, day: 1, men: 1, man: 1, 
+	time: 1
+clerks
+	fool: 2, manciple: 1, bran: 1, men: 1, time: 3, mill: 2, grain: 1, miller: 3, 
+	wife: 1, clerks: 2, ditch: 1, cradle: 2, symkyn: 1, little: 1, skull: 1, 
+	meal: 1
+may
+	little: 1, prosper: 2, limbs: 1, truth: 1, tongue: 1, chime: 1, neck: 1, piece: 1, 
+	trough: 1, miller: 3, man: 1, men: 1, wench: 3, fire: 2, fool: 1, 
+	day: 1, may: 2
+miller
+	force: 1, terms: 1, truth: 1, dwelling: 1, milling: 1, land: 1, people: 1, meal: 1, 
+	fuss: 1, scholars: 1, grain: 2, may: 3, miller: 4, man: 2, mill: 3, 
+	clerks: 3, flour: 2, men: 1, hand: 1, fire: 1, god: 3, town: 1, 
+	same: 1, head: 1, cradle: 2, wife: 6, day: 1, neck: 2, nose: 2, 
+	little: 1, skull: 1, tale: 1

@@ -13,7 +13,8 @@ for line in reeves_text:
         for word in line.split(' '):
             word = ''.join(x for x in word if x.isalpha())
             if word != '':
-                cleanedReeve = cleanedReeve + ' '+ word
+                if word not in ignore_list:
+                    cleanedReeve = cleanedReeve + ' '+ word
 
 frequency_dict = {}
 for word in cleanedReeve.split(' '):

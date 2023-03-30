@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-text_file = open("parts_of_speech.txt").read()
+text_file = open("smaller_speech_list_reeves.txt").read()
 
 for line in text_file.split("\n"):
     line_list = []
