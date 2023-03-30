@@ -8,4 +8,12 @@
 <h3>reeves_network txt files:</h3>These are two of the output files of reeve_network.py. They contain displays of the dictionaries that form the text networks.
 <h3>list_creator.py:</h3> Program that turns plain text into a list with quotes to indicate the word is a string in Python. Input is: <strong>speech_non_lists.txt</strong> and the output looks like <strong>speech_lists.txt</strong>
 <h3>frequency.py:</h3> Program that prints the sorted number of appearances of words in the Reeve's Tale. It excludes basic and frequency used words like "a", "the" and "in".
- <h3>reeves_tale.txt:</h3> Text of the Reeve's Tale.
+ <h3>reeves_tale.txt:</h3> Text of the Reeve's Tale.<br>
+ <h3>References:</h3>
+ Reeve's Tale Text: https://chaucer.fas.harvard.edu/pages/reeves-prologue-and-tale<br>
+ Word Cloud Creation: https://towardsdatascience.com/how-to-make-word-clouds-in-python-that-dont-suck-86518cdcb61f<br>
+ PyVis Tutorial: https://pyvis.readthedocs.io/en/latest/tutorial.html<br>
+ Networkx Tutorial: https://networkx.org/documentation/stable/tutorial.html<br>
+ Networkx Circular Layout: https://www.toptal.com/data-science/graph-data-science-python-networkx<br>
+ Network Visualizations: https://towardsdatascience.com/text-network-analysis-generate-beautiful-network-visualisations-a373dbe183ca<br>
+ 
