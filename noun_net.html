@@ -1,0 +1,250 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        
+            <script src="lib/bindings/utils.js"></script>
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/dist/vis-network.min.css" integrity="sha512-WgxfT5LWjfszlPHXRmBWHkV2eceiWTOBvrKCNbdgDYTHrT2AeLCGbF4sZlZw3UMN3WtL0tGUoIAKsu8mllg/XA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/vis-network/9.1.2/dist/vis-network.min.js" integrity="sha512-LnvoEWDFrqGHlHmDD2101OrLcbsfkrzoSpvtSQtxK3RMnRV0eOkhhBN2dXHKRrUU8p2DGRTk35n4O8nWSVe1mQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            
+        
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+        <link
+          href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+          crossorigin="anonymous"
+        />
+        <script
+          src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+          crossorigin="anonymous"
+        ></script>
+
+
+        <center>
+          <h1></h1>
+        </center>
+        <style type="text/css">
+
+             #mynetwork {
+                 width: 100%;
+                 height: 600px;
+                 background-color: #ffffff;
+                 border: 1px solid lightgray;
+                 position: relative;
+                 float: left;
+             }
+
+             
+             #loadingBar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width: 100%;
+                 height: 600px;
+                 background-color:rgba(200,200,200,0.8);
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 opacity:1;
+             }
+
+             #bar {
+                 position:absolute;
+                 top:0px;
+                 left:0px;
+                 width:20px;
+                 height:20px;
+                 margin:auto auto auto auto;
+                 border-radius:11px;
+                 border:2px solid rgba(30,30,30,0.05);
+                 background: rgb(0, 173, 246); /* Old browsers */
+                 box-shadow: 2px 0px 4px rgba(0,0,0,0.4);
+             }
+
+             #border {
+                 position:absolute;
+                 top:10px;
+                 left:10px;
+                 width:500px;
+                 height:23px;
+                 margin:auto auto auto auto;
+                 box-shadow: 0px 0px 4px rgba(0,0,0,0.2);
+                 border-radius:10px;
+             }
+
+             #text {
+                 position:absolute;
+                 top:8px;
+                 left:530px;
+                 width:30px;
+                 height:50px;
+                 margin:auto auto auto auto;
+                 font-size:22px;
+                 color: #000000;
+             }
+
+             div.outerBorder {
+                 position:relative;
+                 top:400px;
+                 width:600px;
+                 height:44px;
+                 margin:auto auto auto auto;
+                 border:8px solid rgba(0,0,0,0.1);
+                 background: rgb(252,252,252); /* Old browsers */
+                 background: -moz-linear-gradient(top,  rgba(252,252,252,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+                 background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(252,252,252,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+                 background: -webkit-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+                 background: -o-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+                 background: -ms-linear-gradient(top,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+                 background: linear-gradient(to bottom,  rgba(252,252,252,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+                 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfcfc', endColorstr='#ededed',GradientType=0 ); /* IE6-9 */
+                 border-radius:72px;
+                 box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+             }
+             
+
+             
+
+             
+        </style>
+    </head>
+
+
+    <body>
+        <div class="card" style="width: 100%">
+            
+            
+            <div id="mynetwork" class="card-body"></div>
+        </div>
+
+        
+            <div id="loadingBar">
+              <div class="outerBorder">
+                <div id="text">0%</div>
+                <div id="border">
+                  <div id="bar"></div>
+                </div>
+              </div>
+            </div>
+        
+        
+
+        <script type="text/javascript">
+
+              // initialize global variables.
+              var edges;
+              var nodes;
+              var allNodes;
+              var allEdges;
+              var nodeColors;
+              var originalNodes;
+              var network;
+              var container;
+              var options, data;
+              var filter = {
+                  item : '',
+                  property : '',
+                  value : []
+              };
+
+              
+
+              
+
+              // This method is responsible for drawing the graph, returns the drawn network
+              function drawGraph() {
+                  var container = document.getElementById('mynetwork');
+
+                  
+
+                  // parsing and collecting nodes and edges from the python
+                  nodes = new vis.DataSet([{"color": "#97c2fc", "id": "i", "label": "i", "shape": "dot", "title": "i Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "he", "label": "he", "shape": "dot", "title": "he Neighbors:\nmeal\nmirth\nholy\ntip\nhost\nfire\nflour\nhand\npeople\ndagger\nbully\nditch\nhead\ntime\nday\nsword\npeacock\nparson\npiece\nmay\nmiller\nman\nthief\nher\nhis\nape\nsack\nsermon\nbelt\nmen\nmill\nsymkyn\nshe\nwolf\npan\nwench\nbagpipe\nlittle\ngod\nnose\nfolk\nclerks\nwife\ngrain\nhe\nblade", "value": 46}, {"color": "#97c2fc", "id": "she", "label": "she", "shape": "dot", "title": "she Neighbors:\nholy\ncradle\nholidays\nlady\nparson\ndisdain\nmiller\nher\nhis\nheart\nsymkyn\nhaughty\nshe\nhe\nyears\nlittle\ngod\nfolk\nwife\ngown", "value": 20}, {"color": "#97c2fc", "id": "his", "label": "his", "shape": "dot", "title": "his Neighbors:\nmeal\nholy\ntip\nflour\nhand\ncradle\nhead\nneck\nanger\npiece\nmiller\nmay\nsly\ntown\nher\nbelt\nhis\nsack\nape\nsymkyn\nhaughty\nshe\nsame\nhood\nbagpipe\ngod\nnose\nterms\nclerks\nwife\ngrain\nproperty\nhe", "value": 33}, {"color": "#97c2fc", "id": "her", "label": "her", "shape": "dot", "title": "her Neighbors:\ntown\nholy\nher\nhis\nlittle\nparson\ncradle\nanything\nholidays\nwife\nlady\nsame\nbreasts\nhe\nmiller\nwench\nshe", "value": 17}, {"color": "#97c2fc", "id": "folk", "label": "folk", "shape": "dot", "title": "folk Neighbors:\nabsolon\npart\nhe\nshe", "value": 4}, {"color": "#97c2fc", "id": "business", "label": "business", "shape": "dot", "title": "business Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "absolon", "label": "absolon", "shape": "dot", "title": "absolon Neighbors:\nfolk", "value": 1}, {"color": "#97c2fc", "id": "nicholas", "label": "nicholas", "shape": "dot", "title": "nicholas Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "opinions", "label": "opinions", "shape": "dot", "title": "opinions Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "part", "label": "part", "shape": "dot", "title": "part Neighbors:\ntale\nfolk", "value": 2}, {"color": "#97c2fc", "id": "tale", "label": "tale", "shape": "dot", "title": "tale Neighbors:\npart\nmay\nman\nage", "value": 4}, {"color": "#97c2fc", "id": "man", "label": "man", "shape": "dot", "title": "man Neighbors:\ntale\neyes\nhe\nmiller\nwench", "value": 5}, {"color": "#97c2fc", "id": "Osewold", "label": "Osewold", "shape": "dot", "title": "Osewold Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "reeve", "label": "reeve", "shape": "dot", "title": "reeve Neighbors:\ndevil\ncobbler", "value": 2}, {"color": "#97c2fc", "id": "carpenters", "label": "carpenters", "shape": "dot", "title": "carpenters Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "craft", "label": "craft", "shape": "dot", "title": "craft Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "anger", "label": "anger", "shape": "dot", "title": "anger Neighbors:\nhis\nlittle", "value": 2}, {"color": "#97c2fc", "id": "heart", "label": "heart", "shape": "dot", "title": "heart Neighbors:\nshe\nfare\nhead\nclerks", "value": 4}, {"color": "#97c2fc", "id": "grouch", "label": "grouch", "shape": "dot", "title": "grouch Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "little", "label": "little", "shape": "dot", "title": "little Neighbors:\nmirth\nher\ncradle\nsparks\nanger\nmill\ncoals\nshe\nhe\nwench", "value": 10}, {"color": "#97c2fc", "id": "may", "label": "may", "shape": "dot", "title": "may Neighbors:\nmeal\nlimbs\ntongue\nmay\nyears\nmen\nhis\nfire\ntale\nday\nneck\nwretchedness\nhe\nmiller\nwench\nfather", "value": 16}, {"color": "#97c2fc", "id": "prosper", "label": "prosper", "shape": "dot", "title": "prosper Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "fruit", "label": "fruit", "shape": "dot", "title": "fruit Neighbors:\nmedlar\nfare\nsame\nrubbish", "value": 4}, {"color": "#97c2fc", "id": "medlar", "label": "medlar", "shape": "dot", "title": "medlar Neighbors:\nsame\nfruit", "value": 2}, {"color": "#97c2fc", "id": "same", "label": "same", "shape": "dot", "title": "same Neighbors:\nhose\nher\nhis\nmedlar\nfruit\nmiller", "value": 6}, {"color": "#97c2fc", "id": "rubbish", "label": "rubbish", "shape": "dot", "title": "rubbish Neighbors:\nfare\npeople\nsack\nfruit", "value": 4}, {"color": "#97c2fc", "id": "straw", "label": "straw", "shape": "dot", "title": "straw Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "men", "label": "men", "shape": "dot", "title": "men Neighbors:\nhe\nmay\nhand\ngrain", "value": 4}, {"color": "#97c2fc", "id": "fear", "label": "fear", "shape": "dot", "title": "fear Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "fare", "label": "fare", "shape": "dot", "title": "fare Neighbors:\ndance\nheart\nrubbish\nfruit", "value": 4}, {"color": "#97c2fc", "id": "dance", "label": "dance", "shape": "dot", "title": "dance Neighbors:\nfare\nworld", "value": 2}, {"color": "#97c2fc", "id": "world", "label": "world", "shape": "dot", "title": "world Neighbors:\ndance\nsticks", "value": 2}, {"color": "#97c2fc", "id": "pipe", "label": "pipe", "shape": "dot", "title": "pipe Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "sticks", "label": "sticks", "shape": "dot", "title": "sticks Neighbors:\nworld\nhead", "value": 2}, {"color": "#97c2fc", "id": "nail", "label": "nail", "shape": "dot", "title": "nail Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "leek", "label": "leek", "shape": "dot", "title": "leek Neighbors:\npower\nhead", "value": 2}, {"color": "#97c2fc", "id": "power", "label": "power", "shape": "dot", "title": "power Neighbors:\nleek\ndesires", "value": 2}, {"color": "#97c2fc", "id": "desires", "label": "desires", "shape": "dot", "title": "desires Neighbors:\nfolly\npower", "value": 2}, {"color": "#97c2fc", "id": "folly", "label": "folly", "shape": "dot", "title": "folly Neighbors:\ndesires\nashes", "value": 2}, {"color": "#97c2fc", "id": "anything", "label": "anything", "shape": "dot", "title": "anything Neighbors:\nher", "value": 1}, {"color": "#97c2fc", "id": "ashes", "label": "ashes", "shape": "dot", "title": "ashes Neighbors:\nfolly\nfire", "value": 2}, {"color": "#97c2fc", "id": "fire", "label": "fire", "shape": "dot", "title": "fire Neighbors:\nmay\ncoals\nhe\nmiller\nashes", "value": 5}, {"color": "#97c2fc", "id": "coals", "label": "coals", "shape": "dot", "title": "coals Neighbors:\nlittle\nfire", "value": 2}, {"color": "#97c2fc", "id": "boasting", "label": "boasting", "shape": "dot", "title": "boasting Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "lying", "label": "lying", "shape": "dot", "title": "lying Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "greed", "label": "greed", "shape": "dot", "title": "greed Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "sparks", "label": "sparks", "shape": "dot", "title": "sparks Neighbors:\nlittle\nlimbs", "value": 2}, {"color": "#97c2fc", "id": "age", "label": "age", "shape": "dot", "title": "age Neighbors:\ntale\ntime", "value": 2}, {"color": "#97c2fc", "id": "limbs", "label": "limbs", "shape": "dot", "title": "limbs Neighbors:\nsparks\nmay", "value": 2}, {"color": "#97c2fc", "id": "truth", "label": "truth", "shape": "dot", "title": "truth Neighbors:\nbrook\nmiller", "value": 2}, {"color": "#97c2fc", "id": "years", "label": "years", "shape": "dot", "title": "years Neighbors:\ntongue\nmay\nshe\ncradle", "value": 4}, {"color": "#97c2fc", "id": "tongue", "label": "tongue", "shape": "dot", "title": "tongue Neighbors:\nyears\nmay", "value": 2}, {"color": "#97c2fc", "id": "chime", "label": "chime", "shape": "dot", "title": "chime Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "wretchedness", "label": "wretchedness", "shape": "dot", "title": "wretchedness Neighbors:\nhost\nmay", "value": 2}, {"color": "#97c2fc", "id": "dotage", "label": "dotage", "shape": "dot", "title": "dotage Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "host", "label": "host", "shape": "dot", "title": "host Neighbors:\nsermon\nwretchedness\nhe\nhand", "value": 4}, {"color": "#97c2fc", "id": "sermon", "label": "sermon", "shape": "dot", "title": "sermon Neighbors:\nhost\nhe", "value": 2}, {"color": "#97c2fc", "id": "king", "label": "king", "shape": "dot", "title": "king Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "wit", "label": "wit", "shape": "dot", "title": "wit Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "day", "label": "day", "shape": "dot", "title": "day Neighbors:\nhall\nholy\nmanciple\nditch\ngrain\nhe\nmay", "value": 7}, {"color": "#97c2fc", "id": "holy", "label": "holy", "shape": "dot", "title": "holy Neighbors:\ngoods\nmonopoly\nher\nhis\ndevil\nday\nshe\nhe", "value": 8}, {"color": "#97c2fc", "id": "writ", "label": "writ", "shape": "dot", "title": "writ Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "devil", "label": "devil", "shape": "dot", "title": "devil Neighbors:\nreeve\nholy", "value": 2}, {"color": "#97c2fc", "id": "cobbler", "label": "cobbler", "shape": "dot", "title": "cobbler Neighbors:\nshipman\nreeve", "value": 2}, {"color": "#97c2fc", "id": "shipman", "label": "shipman", "shape": "dot", "title": "shipman Neighbors:\ncobbler\ntime", "value": 2}, {"color": "#97c2fc", "id": "physician", "label": "physician", "shape": "dot", "title": "physician Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "time", "label": "time", "shape": "dot", "title": "time Neighbors:\nfool\nhead\nage\nclerks\nshipman\ngrain\nhe\nmiller", "value": 8}, {"color": "#97c2fc", "id": "deptford", "label": "deptford", "shape": "dot", "title": "deptford Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "sires", "label": "sires", "shape": "dot", "title": "sires Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "displeased", "label": "displeased", "shape": "dot", "title": "displeased Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "fool", "label": "fool", "shape": "dot", "title": "fool Neighbors:\npermissable\ntime", "value": 2}, {"color": "#97c2fc", "id": "permissable", "label": "permissable", "shape": "dot", "title": "permissable Neighbors:\nforce\nfool", "value": 2}, {"color": "#97c2fc", "id": "force", "label": "force", "shape": "dot", "title": "force Neighbors:\npermissable\nmiller", "value": 2}, {"color": "#97c2fc", "id": "miller", "label": "miller", "shape": "dot", "title": "miller Neighbors:\nforce\nmeal\nfire\ncradle\ndwelling\ntime\nmay\nmiller\nman\nthief\ntown\nher\nhis\nmill\nsame\nshe\ntruth\ngod\nnose\nclerks\ngrain\nhe", "value": 22}, {"color": "#97c2fc", "id": "terms", "label": "terms", "shape": "dot", "title": "terms Neighbors:\nhis\ngod", "value": 2}, {"color": "#97c2fc", "id": "god", "label": "god", "shape": "dot", "title": "god Neighbors:\nhis\nterms\nshe\nhe\nmiller\nfather", "value": 6}, {"color": "#97c2fc", "id": "neck", "label": "neck", "shape": "dot", "title": "neck Neighbors:\nhis\nmay", "value": 2}, {"color": "#97c2fc", "id": "piece", "label": "piece", "shape": "dot", "title": "piece Neighbors:\nbrook\nhis\nhe", "value": 3}, {"color": "#97c2fc", "id": "timber", "label": "timber", "shape": "dot", "title": "timber Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "trumpington", "label": "trumpington", "shape": "dot", "title": "trumpington Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "Cambridge", "label": "Cambridge", "shape": "dot", "title": "Cambridge Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "brook", "label": "brook", "shape": "dot", "title": "brook Neighbors:\npiece\ntruth", "value": 2}, {"color": "#97c2fc", "id": "bridge", "label": "bridge", "shape": "dot", "title": "bridge Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "mill", "label": "mill", "shape": "dot", "title": "mill Neighbors:\nlittle\nclerks\nguide\ngrain\nhe\nmiller", "value": 6}, {"color": "#97c2fc", "id": "dwelling", "label": "dwelling", "shape": "dot", "title": "dwelling Neighbors:\npeacock\nmiller", "value": 2}, {"color": "#97c2fc", "id": "peacock", "label": "peacock", "shape": "dot", "title": "peacock Neighbors:\ndwelling\nhe", "value": 2}, {"color": "#97c2fc", "id": "bagpipe", "label": "bagpipe", "shape": "dot", "title": "bagpipe Neighbors:\nhis\nhe", "value": 2}, {"color": "#97c2fc", "id": "fish", "label": "fish", "shape": "dot", "title": "fish Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "nets", "label": "nets", "shape": "dot", "title": "nets Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "game", "label": "game", "shape": "dot", "title": "game Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "belt", "label": "belt", "shape": "dot", "title": "belt Neighbors:\nhis\nhe", "value": 2}, {"color": "#97c2fc", "id": "cutlass", "label": "cutlass", "shape": "dot", "title": "cutlass Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "blade", "label": "blade", "shape": "dot", "title": "blade Neighbors:\ndagger\nhe", "value": 2}, {"color": "#97c2fc", "id": "sword", "label": "sword", "shape": "dot", "title": "sword Neighbors:\nbuckler\nhe", "value": 2}, {"color": "#97c2fc", "id": "dagger", "label": "dagger", "shape": "dot", "title": "dagger Neighbors:\nhe\nblade", "value": 2}, {"color": "#97c2fc", "id": "pouch", "label": "pouch", "shape": "dot", "title": "pouch Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "peril", "label": "peril", "shape": "dot", "title": "peril Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "Sheffield", "label": "Sheffield", "shape": "dot", "title": "Sheffield Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "hose", "label": "hose", "shape": "dot", "title": "hose Neighbors:\nsame\nsymkyn", "value": 2}, {"color": "#97c2fc", "id": "face", "label": "face", "shape": "dot", "title": "face Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "nose", "label": "nose", "shape": "dot", "title": "nose Neighbors:\nhis\neyes\nhe\nmiller\nwench", "value": 5}, {"color": "#97c2fc", "id": "ape", "label": "ape", "shape": "dot", "title": "ape Neighbors:\nhis\nhe", "value": 2}, {"color": "#97c2fc", "id": "skull", "label": "skull", "shape": "dot", "title": "skull Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "bully", "label": "bully", "shape": "dot", "title": "bully Neighbors:\nhe\nperson", "value": 2}, {"color": "#97c2fc", "id": "person", "label": "person", "shape": "dot", "title": "person Neighbors:\nbully\nhand", "value": 2}, {"color": "#97c2fc", "id": "hand", "label": "hand", "shape": "dot", "title": "hand Neighbors:\nmen\nhis\nhost\nhead\nperson\nhe", "value": 6}, {"color": "#97c2fc", "id": "thief", "label": "thief", "shape": "dot", "title": "thief Neighbors:\nhe\nmiller", "value": 2}, {"color": "#97c2fc", "id": "grain", "label": "grain", "shape": "dot", "title": "grain Neighbors:\nmeal\ntown\nmen\nhis\ntime\nclerks\nday\nmill\nhopper\nhe\nmiller\nsly", "value": 12}, {"color": "#97c2fc", "id": "meal", "label": "meal", "shape": "dot", "title": "meal Neighbors:\nmay\nhis\nhopper\ngrain\nhe\nmiller", "value": 6}, {"color": "#97c2fc", "id": "sly", "label": "sly", "shape": "dot", "title": "sly Neighbors:\nhis\ngrain", "value": 2}, {"color": "#97c2fc", "id": "haughty", "label": "haughty", "shape": "dot", "title": "haughty Neighbors:\nshe\nhis\nwife\nwater", "value": 4}, {"color": "#97c2fc", "id": "symkyn", "label": "symkyn", "shape": "dot", "title": "symkyn Neighbors:\nhose\ngown\nhis\nshe\nhe\npan", "value": 6}, {"color": "#97c2fc", "id": "wife", "label": "wife", "shape": "dot", "title": "wife Neighbors:\nher\nhis\nhaughty\nshe\nhe\nwench", "value": 6}, {"color": "#97c2fc", "id": "kin", "label": "kin", "shape": "dot", "title": "kin Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "parson", "label": "parson", "shape": "dot", "title": "parson Neighbors:\nshe\nher\nhe\ntown", "value": 4}, {"color": "#97c2fc", "id": "town", "label": "town", "shape": "dot", "title": "town Neighbors:\nher\nhis\ngrain\nparson\nmiller", "value": 5}, {"color": "#97c2fc", "id": "father", "label": "father", "shape": "dot", "title": "father Neighbors:\ngod\nmay", "value": 2}, {"color": "#97c2fc", "id": "pan", "label": "pan", "shape": "dot", "title": "pan Neighbors:\nhe\nsymkyn", "value": 2}, {"color": "#97c2fc", "id": "brass", "label": "brass", "shape": "dot", "title": "brass Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "nunnery", "label": "nunnery", "shape": "dot", "title": "nunnery Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "holidays", "label": "holidays", "shape": "dot", "title": "holidays Neighbors:\nshe\nher", "value": 2}, {"color": "#97c2fc", "id": "tip", "label": "tip", "shape": "dot", "title": "tip Neighbors:\nhis\nhe", "value": 2}, {"color": "#97c2fc", "id": "hood", "label": "hood", "shape": "dot", "title": "hood Neighbors:\nhis", "value": 1}, {"color": "#97c2fc", "id": "gown", "label": "gown", "shape": "dot", "title": "gown Neighbors:\nshe\nsymkyn", "value": 2}, {"color": "#97c2fc", "id": "lady", "label": "lady", "shape": "dot", "title": "lady Neighbors:\nshe\nher", "value": 2}, {"color": "#97c2fc", "id": "water", "label": "water", "shape": "dot", "title": "water Neighbors:\ndisdain\nhaughty", "value": 2}, {"color": "#97c2fc", "id": "ditch", "label": "ditch", "shape": "dot", "title": "ditch Neighbors:\nday\nhe", "value": 2}, {"color": "#97c2fc", "id": "disdain", "label": "disdain", "shape": "dot", "title": "disdain Neighbors:\nshe\nwater", "value": 2}, {"color": "#97c2fc", "id": "cradle", "label": "cradle", "shape": "dot", "title": "cradle Neighbors:\nyears\nher\nhis\nlittle\nhead\nshe\nmiller", "value": 7}, {"color": "#97c2fc", "id": "boy", "label": "boy", "shape": "dot", "title": "boy Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "wench", "label": "wench", "shape": "dot", "title": "wench Neighbors:\nher\nlittle\nnose\nwife\nhe\nmay\nman", "value": 7}, {"color": "#97c2fc", "id": "eyes", "label": "eyes", "shape": "dot", "title": "eyes Neighbors:\nbuttocks\nnose\nflour\nman", "value": 4}, {"color": "#97c2fc", "id": "glass", "label": "glass", "shape": "dot", "title": "glass Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "buttocks", "label": "buttocks", "shape": "dot", "title": "buttocks Neighbors:\neyes\nbreasts", "value": 2}, {"color": "#97c2fc", "id": "breasts", "label": "breasts", "shape": "dot", "title": "breasts Neighbors:\nher\nbuttocks", "value": 2}, {"color": "#97c2fc", "id": "hair", "label": "hair", "shape": "dot", "title": "hair Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "property", "label": "property", "shape": "dot", "title": "property Neighbors:\nhis", "value": 1}, {"color": "#97c2fc", "id": "household", "label": "household", "shape": "dot", "title": "household Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "ancestry", "label": "ancestry", "shape": "dot", "title": "ancestry Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "churchs", "label": "churchs", "shape": "dot", "title": "churchs Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "goods", "label": "goods", "shape": "dot", "title": "goods Neighbors:\nholy", "value": 1}, {"color": "#97c2fc", "id": "monopoly", "label": "monopoly", "shape": "dot", "title": "monopoly Neighbors:\nmilling\nholy", "value": 2}, {"color": "#97c2fc", "id": "milling", "label": "milling", "shape": "dot", "title": "milling Neighbors:\nland\nmonopoly", "value": 2}, {"color": "#97c2fc", "id": "land", "label": "land", "shape": "dot", "title": "land Neighbors:\nmilling\npeople", "value": 2}, {"color": "#97c2fc", "id": "college", "label": "college", "shape": "dot", "title": "college Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "people", "label": "people", "shape": "dot", "title": "people Neighbors:\nrubbish\nmanciple\nland\nsoler\nhe", "value": 5}, {"color": "#97c2fc", "id": "soler", "label": "soler", "shape": "dot", "title": "soler Neighbors:\nhall\npeople", "value": 2}, {"color": "#97c2fc", "id": "hall", "label": "hall", "shape": "dot", "title": "hall Neighbors:\nsoler\nday", "value": 2}, {"color": "#97c2fc", "id": "manciple", "label": "manciple", "shape": "dot", "title": "manciple Neighbors:\npeople\nday", "value": 2}, {"color": "#97c2fc", "id": "malady", "label": "malady", "shape": "dot", "title": "malady Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "fuss", "label": "fuss", "shape": "dot", "title": "fuss Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "scholars", "label": "scholars", "shape": "dot", "title": "scholars Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "mirth", "label": "mirth", "shape": "dot", "title": "mirth Neighbors:\nhe\nlittle", "value": 2}, {"color": "#97c2fc", "id": "amusement", "label": "amusement", "shape": "dot", "title": "amusement Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "buckler", "label": "buckler", "shape": "dot", "title": "buckler Neighbors:\nsword\nguide", "value": 2}, {"color": "#97c2fc", "id": "sides", "label": "sides", "shape": "dot", "title": "sides Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "gear", "label": "gear", "shape": "dot", "title": "gear Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "guide", "label": "guide", "shape": "dot", "title": "guide Neighbors:\nbuckler\nmill", "value": 2}, {"color": "#97c2fc", "id": "sack", "label": "sack", "shape": "dot", "title": "sack Neighbors:\nhis\nhe\nrubbish", "value": 3}, {"color": "#97c2fc", "id": "head", "label": "head", "shape": "dot", "title": "head Neighbors:\nsticks\nhis\nheart\nhand\ntime\ncradle\nhe\nleek", "value": 8}, {"color": "#97c2fc", "id": "hopper", "label": "hopper", "shape": "dot", "title": "hopper Neighbors:\nmeal\ngrain", "value": 2}, {"color": "#97c2fc", "id": "trough", "label": "trough", "shape": "dot", "title": "trough Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "flour", "label": "flour", "shape": "dot", "title": "flour Neighbors:\neyes\nhis\nhe\nclerks", "value": 4}, {"color": "#97c2fc", "id": "bran", "label": "bran", "shape": "dot", "title": "bran Neighbors:\n", "value": 0}, {"color": "#97c2fc", "id": "clerks", "label": "clerks", "shape": "dot", "title": "clerks Neighbors:\nhis\nheart\nflour\ntime\nmill\ngrain\nwolf\nhe\nmiller", "value": 9}, {"color": "#97c2fc", "id": "wolf", "label": "wolf", "shape": "dot", "title": "wolf Neighbors:\nclerks\nhe", "value": 2}, {"color": "#97c2fc", "id": "mare", "label": "mare", "shape": "dot", "title": "mare Neighbors:\n", "value": 0}]);
+                  edges = new vis.DataSet([{"from": "folk", "to": "absolon", "value": 1}, {"from": "folk", "to": "part", "value": 1}, {"from": "folk", "to": "she", "value": 1}, {"from": "part", "to": "tale", "value": 1}, {"from": "tale", "to": "man", "value": 1}, {"from": "tale", "to": "age", "value": 1}, {"from": "man", "to": "he", "value": 2}, {"from": "man", "to": "eyes", "value": 1}, {"from": "he", "to": "little", "value": 1}, {"from": "he", "to": "may", "value": 3}, {"from": "he", "to": "he", "value": 23}, {"from": "he", "to": "day", "value": 2}, {"from": "he", "to": "piece", "value": 2}, {"from": "he", "to": "bagpipe", "value": 1}, {"from": "he", "to": "blade", "value": 1}, {"from": "he", "to": "his", "value": 18}, {"from": "he", "to": "ape", "value": 1}, {"from": "he", "to": "bully", "value": 1}, {"from": "he", "to": "thief", "value": 2}, {"from": "he", "to": "grain", "value": 2}, {"from": "he", "to": "parson", "value": 1}, {"from": "he", "to": "pan", "value": 1}, {"from": "he", "to": "she", "value": 4}, {"from": "he", "to": "tip", "value": 1}, {"from": "he", "to": "folk", "value": 1}, {"from": "he", "to": "her", "value": 2}, {"from": "he", "to": "holy", "value": 1}, {"from": "he", "to": "miller", "value": 3}, {"from": "he", "to": "mirth", "value": 1}, {"from": "he", "to": "sword", "value": 1}, {"from": "he", "to": "sack", "value": 1}, {"from": "he", "to": "clerks", "value": 6}, {"from": "he", "to": "wife", "value": 1}, {"from": "he", "to": "god", "value": 2}, {"from": "he", "to": "flour", "value": 1}, {"from": "he", "to": "ditch", "value": 1}, {"from": "he", "to": "host", "value": 1}, {"from": "he", "to": "wench", "value": 2}, {"from": "he", "to": "nose", "value": 1}, {"from": "little", "to": "anger", "value": 1}, {"from": "little", "to": "sparks", "value": 1}, {"from": "little", "to": "wench", "value": 1}, {"from": "little", "to": "mill", "value": 1}, {"from": "little", "to": "her", "value": 1}, {"from": "little", "to": "she", "value": 1}, {"from": "anger", "to": "his", "value": 1}, {"from": "his", "to": "terms", "value": 1}, {"from": "his", "to": "neck", "value": 1}, {"from": "his", "to": "belt", "value": 1}, {"from": "his", "to": "his", "value": 9}, {"from": "his", "to": "haughty", "value": 1}, {"from": "his", "to": "she", "value": 5}, {"from": "his", "to": "hood", "value": 1}, {"from": "his", "to": "property", "value": 1}, {"from": "his", "to": "her", "value": 1}, {"from": "his", "to": "holy", "value": 1}, {"from": "his", "to": "sack", "value": 2}, {"from": "his", "to": "grain", "value": 1}, {"from": "his", "to": "clerks", "value": 1}, {"from": "his", "to": "meal", "value": 1}, {"from": "his", "to": "hand", "value": 3}, {"from": "his", "to": "wife", "value": 5}, {"from": "his", "to": "miller", "value": 3}, {"from": "his", "to": "same", "value": 1}, {"from": "his", "to": "head", "value": 1}, {"from": "his", "to": "nose", "value": 1}, {"from": "may", "to": "tale", "value": 1}, {"from": "may", "to": "years", "value": 1}, {"from": "may", "to": "wretchedness", "value": 1}, {"from": "may", "to": "miller", "value": 2}, {"from": "may", "to": "fire", "value": 1}, {"from": "may", "to": "wench", "value": 1}, {"from": "may", "to": "his", "value": 1}, {"from": "may", "to": "may", "value": 1}, {"from": "may", "to": "father", "value": 1}, {"from": "age", "to": "time", "value": 1}, {"from": "time", "to": "head", "value": 1}, {"from": "time", "to": "fool", "value": 1}, {"from": "time", "to": "miller", "value": 1}, {"from": "time", "to": "he", "value": 1}, {"from": "head", "to": "heart", "value": 1}, {"from": "head", "to": "leek", "value": 1}, {"from": "head", "to": "he", "value": 1}, {"from": "head", "to": "cradle", "value": 1}, {"from": "heart", "to": "fare", "value": 1}, {"from": "heart", "to": "clerks", "value": 1}, {"from": "fare", "to": "fruit", "value": 1}, {"from": "fare", "to": "dance", "value": 1}, {"from": "fruit", "to": "medlar", "value": 1}, {"from": "fruit", "to": "rubbish", "value": 1}, {"from": "medlar", "to": "same", "value": 1}, {"from": "same", "to": "fruit", "value": 1}, {"from": "same", "to": "her", "value": 1}, {"from": "same", "to": "miller", "value": 1}, {"from": "rubbish", "to": "fare", "value": 1}, {"from": "rubbish", "to": "people", "value": 1}, {"from": "dance", "to": "world", "value": 1}, {"from": "world", "to": "sticks", "value": 1}, {"from": "sticks", "to": "head", "value": 1}, {"from": "leek", "to": "power", "value": 1}, {"from": "power", "to": "desires", "value": 1}, {"from": "desires", "to": "folly", "value": 1}, {"from": "folly", "to": "ashes", "value": 1}, {"from": "ashes", "to": "fire", "value": 1}, {"from": "fire", "to": "coals", "value": 1}, {"from": "fire", "to": "he", "value": 1}, {"from": "coals", "to": "little", "value": 1}, {"from": "sparks", "to": "limbs", "value": 1}, {"from": "limbs", "to": "may", "value": 1}, {"from": "years", "to": "tongue", "value": 1}, {"from": "years", "to": "cradle", "value": 1}, {"from": "tongue", "to": "may", "value": 1}, {"from": "wretchedness", "to": "host", "value": 1}, {"from": "host", "to": "sermon", "value": 1}, {"from": "host", "to": "hand", "value": 1}, {"from": "sermon", "to": "he", "value": 1}, {"from": "day", "to": "holy", "value": 1}, {"from": "day", "to": "manciple", "value": 1}, {"from": "day", "to": "grain", "value": 1}, {"from": "day", "to": "may", "value": 1}, {"from": "holy", "to": "devil", "value": 1}, {"from": "holy", "to": "goods", "value": 1}, {"from": "holy", "to": "monopoly", "value": 1}, {"from": "holy", "to": "she", "value": 1}, {"from": "devil", "to": "reeve", "value": 1}, {"from": "reeve", "to": "cobbler", "value": 1}, {"from": "cobbler", "to": "shipman", "value": 1}, {"from": "shipman", "to": "time", "value": 1}, {"from": "fool", "to": "permissable", "value": 1}, {"from": "permissable", "to": "force", "value": 1}, {"from": "force", "to": "miller", "value": 1}, {"from": "miller", "to": "dwelling", "value": 1}, {"from": "miller", "to": "meal", "value": 1}, {"from": "miller", "to": "grain", "value": 1}, {"from": "miller", "to": "miller", "value": 2}, {"from": "miller", "to": "man", "value": 1}, {"from": "miller", "to": "fire", "value": 1}, {"from": "miller", "to": "town", "value": 1}, {"from": "terms", "to": "god", "value": 1}, {"from": "god", "to": "his", "value": 1}, {"from": "god", "to": "miller", "value": 1}, {"from": "god", "to": "she", "value": 1}, {"from": "neck", "to": "may", "value": 1}, {"from": "piece", "to": "his", "value": 1}, {"from": "piece", "to": "brook", "value": 1}, {"from": "brook", "to": "truth", "value": 1}, {"from": "truth", "to": "miller", "value": 1}, {"from": "dwelling", "to": "peacock", "value": 1}, {"from": "peacock", "to": "he", "value": 1}, {"from": "bagpipe", "to": "his", "value": 1}, {"from": "belt", "to": "he", "value": 1}, {"from": "blade", "to": "dagger", "value": 1}, {"from": "dagger", "to": "he", "value": 1}, {"from": "ape", "to": "his", "value": 1}, {"from": "bully", "to": "person", "value": 1}, {"from": "person", "to": "hand", "value": 1}, {"from": "hand", "to": "he", "value": 2}, {"from": "hand", "to": "men", "value": 1}, {"from": "hand", "to": "head", "value": 1}, {"from": "thief", "to": "miller", "value": 1}, {"from": "grain", "to": "sly", "value": 1}, {"from": "grain", "to": "town", "value": 1}, {"from": "grain", "to": "hopper", "value": 2}, {"from": "grain", "to": "meal", "value": 1}, {"from": "grain", "to": "men", "value": 1}, {"from": "grain", "to": "time", "value": 1}, {"from": "sly", "to": "his", "value": 1}, {"from": "haughty", "to": "wife", "value": 1}, {"from": "haughty", "to": "water", "value": 1}, {"from": "wife", "to": "she", "value": 1}, {"from": "wife", "to": "wench", "value": 1}, {"from": "wife", "to": "her", "value": 1}, {"from": "parson", "to": "town", "value": 1}, {"from": "parson", "to": "she", "value": 1}, {"from": "town", "to": "her", "value": 1}, {"from": "town", "to": "his", "value": 2}, {"from": "her", "to": "her", "value": 3}, {"from": "her", "to": "anything", "value": 1}, {"from": "her", "to": "she", "value": 5}, {"from": "her", "to": "parson", "value": 1}, {"from": "her", "to": "holy", "value": 1}, {"from": "her", "to": "cradle", "value": 2}, {"from": "her", "to": "miller", "value": 1}, {"from": "pan", "to": "symkyn", "value": 1}, {"from": "symkyn", "to": "his", "value": 1}, {"from": "symkyn", "to": "he", "value": 1}, {"from": "symkyn", "to": "hose", "value": 1}, {"from": "she", "to": "symkyn", "value": 1}, {"from": "she", "to": "holidays", "value": 1}, {"from": "she", "to": "gown", "value": 1}, {"from": "she", "to": "haughty", "value": 1}, {"from": "she", "to": "lady", "value": 1}, {"from": "she", "to": "years", "value": 1}, {"from": "she", "to": "she", "value": 9}, {"from": "she", "to": "cradle", "value": 1}, {"from": "she", "to": "heart", "value": 1}, {"from": "she", "to": "miller", "value": 1}, {"from": "holidays", "to": "her", "value": 1}, {"from": "tip", "to": "his", "value": 1}, {"from": "gown", "to": "symkyn", "value": 1}, {"from": "hose", "to": "same", "value": 1}, {"from": "water", "to": "disdain", "value": 1}, {"from": "disdain", "to": "she", "value": 1}, {"from": "lady", "to": "her", "value": 1}, {"from": "cradle", "to": "little", "value": 1}, {"from": "cradle", "to": "his", "value": 1}, {"from": "cradle", "to": "miller", "value": 1}, {"from": "wench", "to": "nose", "value": 1}, {"from": "wench", "to": "man", "value": 1}, {"from": "wench", "to": "her", "value": 1}, {"from": "nose", "to": "eyes", "value": 1}, {"from": "nose", "to": "miller", "value": 1}, {"from": "eyes", "to": "buttocks", "value": 1}, {"from": "eyes", "to": "flour", "value": 1}, {"from": "buttocks", "to": "breasts", "value": 1}, {"from": "breasts", "to": "her", "value": 1}, {"from": "monopoly", "to": "milling", "value": 1}, {"from": "milling", "to": "land", "value": 1}, {"from": "land", "to": "people", "value": 1}, {"from": "people", "to": "soler", "value": 1}, {"from": "people", "to": "he", "value": 2}, {"from": "soler", "to": "hall", "value": 1}, {"from": "hall", "to": "day", "value": 1}, {"from": "manciple", "to": "people", "value": 1}, {"from": "meal", "to": "he", "value": 1}, {"from": "meal", "to": "may", "value": 1}, {"from": "mirth", "to": "little", "value": 1}, {"from": "mill", "to": "grain", "value": 1}, {"from": "mill", "to": "he", "value": 1}, {"from": "mill", "to": "miller", "value": 1}, {"from": "sack", "to": "rubbish", "value": 1}, {"from": "sword", "to": "buckler", "value": 1}, {"from": "buckler", "to": "guide", "value": 1}, {"from": "guide", "to": "mill", "value": 1}, {"from": "clerks", "to": "wolf", "value": 1}, {"from": "clerks", "to": "grain", "value": 1}, {"from": "clerks", "to": "miller", "value": 2}, {"from": "clerks", "to": "time", "value": 1}, {"from": "clerks", "to": "mill", "value": 1}, {"from": "hopper", "to": "meal", "value": 1}, {"from": "flour", "to": "clerks", "value": 1}, {"from": "flour", "to": "his", "value": 1}, {"from": "wolf", "to": "he", "value": 1}, {"from": "ditch", "to": "day", "value": 1}, {"from": "men", "to": "he", "value": 1}, {"from": "men", "to": "may", "value": 1}, {"from": "father", "to": "god", "value": 1}]);
+
+                  nodeColors = {};
+                  allNodes = nodes.get({ returnType: "Object" });
+                  for (nodeId in allNodes) {
+                    nodeColors[nodeId] = allNodes[nodeId].color;
+                  }
+                  allEdges = edges.get({ returnType: "Object" });
+                  // adding nodes and edges to the graph
+                  data = {nodes: nodes, edges: edges};
+
+                  var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": true,
+            "type": "dynamic"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+
+                  
+
+
+                  
+
+                  network = new vis.Network(container, data, options);
+
+                  
+
+                  
+
+                  
+
+
+                  
+                      network.on("stabilizationProgress", function(params) {
+                          document.getElementById('loadingBar').removeAttribute("style");
+                          var maxWidth = 496;
+                          var minWidth = 20;
+                          var widthFactor = params.iterations/params.total;
+                          var width = Math.max(minWidth,maxWidth * widthFactor);
+                          document.getElementById('bar').style.width = width + 'px';
+                          document.getElementById('text').innerHTML = Math.round(widthFactor*100) + '%';
+                      });
+                      network.once("stabilizationIterationsDone", function() {
+                          document.getElementById('text').innerHTML = '100%';
+                          document.getElementById('bar').style.width = '496px';
+                          document.getElementById('loadingBar').style.opacity = 0;
+                          // really clean the dom element
+                          setTimeout(function () {document.getElementById('loadingBar').style.display = 'none';}, 500);
+                      });
+                  
+
+                  return network;
+
+              }
+              drawGraph();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,384 @@
+NOUN TO ADJECTIVE AND VERB CONNECTIONS
+absolon
+	foolish: 1
+man
+	trick: 1
+anger
+	little: 1
+heart
+	old: 1
+fare
+	old: 1
+fruit
+	continually: 1
+leek
+	green: 1
+ashes
+	old: 1
+fire
+	have: 1
+coals
+	have: 1
+sparks
+	little: 1
+limbs
+	old: 1
+tongue
+	foolish: 1
+wretchedness
+	old: 1
+cobbler
+	made: 1
+permissable
+	repel: 1
+force
+	drunk: 1
+terms
+	pray: 1
+bagpipe
+	mend: 1
+blade
+	sharp: 1
+dagger
+	elegant: 1
+ape
+	bald: 1
+person
+	lay: 1
+thief
+	complained: 1
+wife
+	gone: 1
+town
+	called: 1
+symkyn
+	would: 1
+holidays
+	fair: 1
+nose
+	pug: 1
+breasts
+	fair: 1
+goods
+	holy: 1
+monopoly
+	holy: 1
+people
+	thought: 1
+manciple
+	lay: 1
+meal
+	falls: 1
+sack
+	spoke: 1
+buckler
+	needed: 1
+part
+	different: 1, laughed: 1
+tale
+	saw: 1, blearing: 1
+same
+	dared: 1, went: 1
+rubbish
+	continually: 1, trick: 1
+sticks
+	white: 1, have: 1
+folly
+	old: 1, talk: 1
+years
+	young: 1, have: 1
+host
+	old: 1, make: 1
+devil
+	holy: 1, made: 1
+shipman
+	waste: 1, say: 1
+bully
+	quarrelsome: 1, dared: 1
+anything
+	brave: 1, went: 1
+wench
+	little: 1, lay: 1
+eyes
+	ingenious: 1, trickery: 1
+mirth
+	eager: 1, give: 1
+mill
+	little: 1, see: 1
+flour
+	greatest: 1, give: 1
+wolf
+	wisest: 1, spoke: 1
+folk
+	laughed: 1, different: 1, dangerous: 1
+head
+	white: 2, reveals: 1, gone: 1
+hand
+	carried: 1, gone: 1, thought: 1
+cradle
+	lay: 1, gone: 1, have: 1
+hopper
+	fast: 1, see: 1, wags: 1
+time
+	dry: 1, waste: 1, begin: 1, have: 1
+grain
+	dared: 1, rob: 1, fast: 1, carry: 1, saw: 1, have: 1
+clerks
+	expect: 1, greatest: 1, wisest: 1, have: 1, began: 1, fast: 1
+his
+	dared: 1, called: 1, continually: 1, grind: 1, gone: 2, made: 1, lie: 1, foolish: 1
+	
+may
+	repay: 1, young: 1, have: 1, break: 1, poor: 1, make: 1, say: 1, made: 1
+	
+her
+	would: 1, fair: 1, give: 1, fast: 1, went: 1, thought: 1, done: 2, little: 1, 
+	white: 1
+miller
+	drunk: 1, told: 1, stole: 1, thought: 1, steal: 1, poor: 1, done: 2, thick: 1, 
+	saw: 1, make: 1, have: 1, perilous: 1, gone: 1, bald: 1, high: 1, 
+	expect: 1
+she
+	fostered: 1, preserve: 1, fair: 1, besmirched: 1, thought: 2, determined: 1, fast: 1, see: 1, 
+	gone: 3, would: 1, began: 1, foolish: 1, holy: 1, saw: 3, little: 1, 
+	white: 3, have: 1
+he
+	began: 3, lordly: 2, amounts: 1, see: 2, play: 1, sharp: 1, carried: 3, pug: 1, 
+	quarrelsome: 1, jealous: 1, raised: 1, holy: 2, would: 1, stole: 1, young: 1, 
+	blustered: 1, lays: 2, serve: 1, continually: 1, saw: 1, thick: 1, fast: 3, 
+	have: 3, take: 1, pray: 1, made: 1, perilous: 1, called: 1, bold: 1, 
+	bald: 1
+NOUN CONNECTIONS
+absolon
+	folk: 1
+part
+	tale: 1
+anger
+	his: 1
+age
+	time: 1
+medlar
+	same: 1
+dance
+	world: 1
+world
+	sticks: 1
+sticks
+	head: 1
+leek
+	power: 1
+power
+	desires: 1
+desires
+	folly: 1
+folly
+	ashes: 1
+ashes
+	fire: 1
+coals
+	little: 1
+sparks
+	limbs: 1
+limbs
+	may: 1
+tongue
+	may: 1
+wretchedness
+	host: 1
+sermon
+	he: 1
+devil
+	reeve: 1
+reeve
+	cobbler: 1
+cobbler
+	shipman: 1
+shipman
+	time: 1
+fool
+	permissable: 1
+permissable
+	force: 1
+force
+	miller: 1
+terms
+	god: 1
+neck
+	may: 1
+brook
+	truth: 1
+truth
+	miller: 1
+dwelling
+	peacock: 1
+peacock
+	he: 1
+bagpipe
+	his: 1
+belt
+	he: 1
+blade
+	dagger: 1
+dagger
+	he: 1
+ape
+	his: 1
+bully
+	person: 1
+person
+	hand: 1
+sly
+	his: 1
+pan
+	symkyn: 1
+holidays
+	her: 1
+tip
+	his: 1
+hood
+	his: 1
+gown
+	symkyn: 1
+hose
+	same: 1
+anything
+	her: 1
+water
+	disdain: 1
+disdain
+	she: 1
+lady
+	her: 1
+buttocks
+	breasts: 1
+breasts
+	her: 1
+property
+	his: 1
+goods
+	holy: 1
+monopoly
+	milling: 1
+milling
+	land: 1
+land
+	people: 1
+soler
+	hall: 1
+hall
+	day: 1
+manciple
+	people: 1
+mirth
+	little: 1
+sword
+	buckler: 1
+buckler
+	guide: 1
+guide
+	mill: 1
+wolf
+	he: 1
+ditch
+	day: 1
+father
+	god: 1
+tale
+	man: 1, age: 1
+man
+	he: 2, eyes: 1
+heart
+	fare: 1, clerks: 1
+fare
+	fruit: 1, dance: 1
+fruit
+	medlar: 1, rubbish: 1
+rubbish
+	fare: 1, people: 1
+years
+	tongue: 1, cradle: 1
+host
+	sermon: 1, hand: 1
+piece
+	his: 1, brook: 1
+thief
+	he: 1, miller: 1
+haughty
+	wife: 1, water: 1
+parson
+	town: 1, she: 1
+town
+	her: 1, his: 2
+eyes
+	buttocks: 1, flour: 1
+people
+	soler: 1, he: 2
+sack
+	he: 2, rubbish: 1
+hopper
+	grain: 1, meal: 1
+flour
+	clerks: 1, his: 1
+men
+	he: 1, may: 1
+folk
+	absolon: 1, part: 1, she: 1
+same
+	fruit: 1, her: 1, miller: 1
+fire
+	coals: 1, he: 1, may: 1
+symkyn
+	his: 1, he: 1, hose: 1
+nose
+	eyes: 1, he: 1, miller: 1
+meal
+	he: 1, may: 1, his: 2
+mill
+	grain: 1, he: 1, miller: 1
+time
+	head: 1, fool: 1, miller: 1, he: 1
+head
+	heart: 1, leek: 1, he: 1, cradle: 1
+day
+	holy: 1, manciple: 1, grain: 1, may: 1
+god
+	his: 1, he: 1, miller: 1, she: 1
+hand
+	he: 2, men: 1, his: 1, head: 1
+wench
+	nose: 1, he: 2, man: 1, her: 1
+holy
+	devil: 1, goods: 1, he: 2, monopoly: 1, she: 1
+wife
+	he: 4, she: 1, wench: 1, her: 1, his: 1
+cradle
+	little: 1, her: 1, she: 1, his: 1, miller: 1
+little
+	anger: 1, sparks: 1, wench: 1, mill: 1, her: 1, she: 1
+clerks
+	he: 3, wolf: 1, grain: 1, miller: 2, time: 1, mill: 1
+grain
+	sly: 1, miller: 1, town: 1, hopper: 2, meal: 1, men: 1, time: 1
+her
+	her: 3, he: 5, anything: 1, she: 5, parson: 1, his: 2, holy: 1, cradle: 2, 
+	miller: 1
+may
+	tale: 1, years: 1, wretchedness: 1, he: 2, miller: 2, fire: 1, wench: 1, his: 1, 
+	may: 1, father: 1
+miller
+	his: 5, dwelling: 1, meal: 1, he: 9, grain: 1, miller: 2, man: 1, fire: 1, 
+	may: 1, town: 1
+she
+	symkyn: 1, his: 1, holidays: 1, gown: 1, her: 5, haughty: 1, lady: 1, years: 1, 
+	he: 3, she: 9, wife: 1, cradle: 1, little: 2, holy: 1, heart: 1, 
+	miller: 1
+his
+	he: 13, terms: 1, neck: 1, belt: 1, his: 9, haughty: 1, she: 5, hood: 1, 
+	property: 1, her: 1, holy: 1, sack: 2, grain: 1, clerks: 1, meal: 1, 
+	hand: 3, wife: 5, miller: 3, same: 1, head: 1, nose: 1
+he
+	little: 1, may: 3, he: 23, day: 2, piece: 2, bagpipe: 1, blade: 1, his: 18, 
+	ape: 1, bully: 1, thief: 2, grain: 2, parson: 1, pan: 1, she: 4, 
+	tip: 1, folk: 1, her: 2, holy: 1, miller: 3, mirth: 1, sword: 1, 
+	sack: 1, clerks: 6, wife: 1, god: 2, flour: 1, ditch: 1, host: 1, 
+	wench: 2, nose: 1

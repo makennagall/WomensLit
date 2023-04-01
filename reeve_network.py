@@ -15,7 +15,7 @@ reeve_adj = ['foolish', 'clever', 'different', 'aggrieved', 'little', 'angry', '
 reeve_verbs = ['laughed', 'enjoyed', 'saw', 'criticized', 'prosper', 'repay', 'blearing', 'tricking', 'wanted', 'speak', 'play', 'done', 'reveals', 'fear', 'ripe', 'dance', 'pipe', 'sticks', 'have', 'gone', 'talk', 'making', 'began', 'amounts', 'made', 'preach', 'say', 'waste', 'deplored', 'begin', 'pray', 'answer', 'make', 'repel', 'force', 'told', 'tricked', 'scorn', 'leave', 'break', 'see', 'called', 'carried', 'played', 'mend', 'shoot', 'fostered', 'would', 'preserve', 'went', 'flirt', 'dared', 'cut', 'jealous', 'dangerous', 'think', 'besmirched', 'lie', 'determined', 'raised', 'ground', 'happened', 'lay', 'thought', 'die', 'stole', 'complained', 'fuss', 'blustered', 'swore', 'implore', 'give', 'pledge', 'steal', 'trickery', 'rob', 'needed', 'guide', 'lays', 'spoke', 'fares', 'welcome', 'knows', 'serve', 'expect', 'grind', 'carry', 'speed', 'stand', 'wags', 'falls', 'trick', 'take', 'wisest']
 '''
 net = Network()
-reeves_text = open("ReevesTale.txt")
+reeves_text = open("reeves_tale.txt")
 output_reeves = open("small_reeves_network.txt", 'w')
 cleaned_reeve = ''
 for line in reeves_text:
@@ -163,9 +163,11 @@ for main_noun in noun_dict:
 nx.draw(noun_graph, with_labels=True)
 plt.savefig("reeve_noun.png")
 print("noun graph nodes and edges: ")
-print(nx.number_of_nodes(noun_graph))
-print(nx.number_of_edges(noun_graph))
+graph_density = nx.density(graph)
+print(nx.info(noun_graph))
+print("Graph Density: " + str(graph_density))
 print("adjective and verb graph nodes and edges:")
-print(nx.number_of_nodes(graph))
-print(nx.number_of_edges(graph))
+print(nx.info(graph))
+noun_graph_density = nx.density(noun_graph)
+print("Graph Density: " + str(noun_graph_density))
 
